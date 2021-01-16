@@ -11,7 +11,7 @@ import com.sanjaydevtech.asjxcalorietracker.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val tabTitles = listOf("Daily", "Weekly")
+    private val tabTitles = listOf("Dairy", "Summary")
     private val tabIcons = listOf(R.drawable.ic_baseline_fastfood_24, R.drawable.ic_baseline_timeline_24)
     private val fragments = listOf(DailyFragment(), WeeklyFragment())
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.sanjaydevtech.asjxcalorietracker.adapter.TimeListAdapter
 import com.sanjaydevtech.asjxcalorietracker.databinding.FragmentDailyBinding
 import com.sanjaydevtech.asjxcalorietracker.model.TimeData
@@ -15,7 +16,9 @@ class DailyFragment : Fragment() {
 
     private val timeList = listOf(TimeData("Breakfast"), TimeData("Lunch"), TimeData("Dinner"))
 
-    private val adapter = TimeListAdapter(timeList)
+    private val adapter by lazy { TimeListAdapter(requireActivity(), timeList) }
+
+    private val mainViewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
